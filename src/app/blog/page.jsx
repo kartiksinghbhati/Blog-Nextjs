@@ -23,7 +23,7 @@ const Blog = async () => {
   if(data.length===0){
     return(
       <div>
-        <h1>no data available</h1>
+        <h1>No Blog Available</h1>
       </div>
     )
   }
@@ -31,7 +31,7 @@ const Blog = async () => {
     return (
       <div className={styles.mainContainer}>
   
-        {data.map((item) => (
+        {data?.map((item) => (
           <Link href={`/blog/${item._id}`} className={styles.container} key={item.id}>
             <div className={styles.imageContainer}>
               <Image
