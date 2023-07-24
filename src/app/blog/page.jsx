@@ -17,40 +17,38 @@ async function getData() {
 
 const Blog = async () => {
 
-  let data = [];
-  data =  await getData();
+  //let data = await getData();
+  const data = [];
 
-  if(data.length===0){
-    return(
+  if (data.length === 0) {
+    return (
       <div>
         <h1>No Blog Available</h1>
       </div>
     )
   }
-  else{
-    return (
-      <div className={styles.mainContainer}>
-  
-        {data?.map((item) => (
-          <Link href={`/blog/${item._id}`} className={styles.container} key={item.id}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={item.img}
-                alt=""
-                width={400}
-                height={250}
-                className={styles.image}
-              />
-            </div>
-            <div className={styles.content}>
-              <h1 className={styles.title}>{item.title}</h1>
-              <p className={styles.desc}>{item.desc}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    )
-  }
+  return (
+    <div className={styles.mainContainer}>
+
+      {data?.map((item) => (
+        <Link href={`/blog/${item._id}`} className={styles.container} key={item.id}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={item.img}
+              alt=""
+              width={400}
+              height={250}
+              className={styles.image}
+            />
+          </div>
+          <div className={styles.content}>
+            <h1 className={styles.title}>{item.title}</h1>
+            <p className={styles.desc}>{item.desc}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  )
 }
 
 export default Blog
