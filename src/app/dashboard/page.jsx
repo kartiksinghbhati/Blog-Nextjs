@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+
 const Dashboard = () => {
 
   const session = useSession();
@@ -99,29 +100,4 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-
-  //OLD WAY TO FETCH DATA
-
-  // const [data, setData] = useState([]);
-  // const [err, setErr] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     setIsLoading(true);
-  //     const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-  //       cache: "no-store",
-  //     });
-
-  //     if (!res.ok) {
-  //       setErr(true);
-  //     }
-
-  //     const data = await res.json()
-
-  //     setData(data);
-  //     setIsLoading(false);
-  //   };
-  //   getData()
-  // }, []);
 

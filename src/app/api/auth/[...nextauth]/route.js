@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth from "next-auth/next"
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
@@ -47,14 +47,5 @@ const handler = NextAuth({
     error: "/dashboard/login",
   }
 });
-
-// const handler = NextAuth({
-//   providers: [
-//     GoogleProvider({
-//         clientId: process.env.GOOGLE_CLIENT_ID,
-//         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//     }),
-//   ],
-// })
 
 export {handler as GET, handler as POST};
